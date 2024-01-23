@@ -79,7 +79,7 @@ https://templatemo.com/tm-590-topic-listing
 
                     <h1 class="text-white text-center">歡迎參加大數據專班發表活動</h1>
 
-                    <h6 class="text-center">請輸入員編及姓名簽到</h6>
+                    <!-- <h6 class="text-center">請輸入員編及姓名簽到</h6> -->
                     <div class="col-lg-8 col-12 mx-auto">
                         <form id="googleForm"
                             action="https://docs.google.com/forms/d/e/1FAIpQLSdF9rogW4I_v60FU34JOU9SCyWf2giVqjbo8EkI0jQHl4iOZg/formResponse"
@@ -100,16 +100,19 @@ https://templatemo.com/tm-590-topic-listing
                         </form>
                     </div>
                     <div class="col-lg-2 col-12">
-                        <!-- 顯示成功訊息的容器 -->
-                        <div id="successMessage" style="display: none;" class="alert alert-success  text-center fs-3"
+                        <div id="aMessage" style="display: block;" class="alert alert-success  text-center"
                             role="alert">
-                            <i class="bi bi-emoji-wink"></i>
-                            <p class="text-dark">已成功簽到！</p>
+
+                            <span class="fs-2"><i class="bi bi-chat-dots"></i> 請輸入員編及姓名</span>
                         </div>
-                        <div id="errorMessage" style="display:none;" class="alert alert-danger mt-3 text-center fs-5"
+                        <!-- 顯示成功訊息的容器 -->
+                        <div id="successMessage" style="display: none;" class="alert alert-success  text-center"
                             role="alert">
-                            <i class="bi bi-emoji-neutral"></i>
-                            <p>簽到失敗，請聯絡會場人員。</p>
+                            <span class="fs-2"><i class="bi bi-emoji-wink"></i> 已簽到成功！</span>
+                        </div>
+                        <div id="errorMessage" style="display:none;" class="alert alert-danger mt-3 text-center"
+                            role="alert">
+                            <span class="fs-4"><i class="bi bi-emoji-neutral"></i> 簽到失敗，請聯絡會場人員。</span>
                         </div>
                     </div>
 
@@ -137,18 +140,12 @@ https://templatemo.com/tm-590-topic-listing
 
 
         <section class="explore-section section-padding" id="section_2">
-            <div class="container">
-
-                <div class="col-12 text-center">
-                    <h2 class="mb-4">活動議程</h1>
-                </div>
-
-            </div>
-            </div>
 
             <div class="container">
                 <div class="row">
-
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">活動議程</h1>
+                    </div>
                     <div class="col-12">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel"
@@ -241,7 +238,7 @@ https://templatemo.com/tm-590-topic-listing
                                                 <div>
                                                     <h4 class="mb-2">蔡頤瀞</h4>
 
-                                                    <h5 class="mb-0 pt-4">運用網路爬蟲技術分析民意趨勢-以竹科龍潭園區擴建計畫為例</h5>
+                                                    <h5 class="mb-0 pt-4">運用文字探勘技術分析民意趨勢-以竹科龍潭園區擴建計畫為例</h5>
                                                 </div>
 
                                                 <span class="badge bg-design rounded-pill ms-auto">4</span>
@@ -285,10 +282,15 @@ https://templatemo.com/tm-590-topic-listing
         <section class="faq-section section-padding" id="section_3">
             <div class="container">
                 <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">最佳發表投票</h1>
+                    </div>
                     <!-- <iframe
                         src="https://docs.google.com/forms/d/e/1FAIpQLSfON3dGYSxp9djPY30mjJNBU7CA0NMV2PWylsoXbl1zoSoiQg/viewform?embedded=true"
                         width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe> -->
-                        <iframe src="https://app.sli.do/event/mAhgBdAeN8GYWX7t3L4mGn/embed/polls/0ae39962-fc63-431a-80df-c5eef9dc6049" width="100%" height="600"></iframe>
+                    <iframe
+                        src="https://app.sli.do/event/mAhgBdAeN8GYWX7t3L4mGn/embed/polls/0ae39962-fc63-431a-80df-c5eef9dc6049"
+                        width="100%" height="600"></iframe>
                 </div>
             </div>
         </section>
@@ -345,6 +347,7 @@ https://templatemo.com/tm-590-topic-listing
                     .then(response => {
                         console.log('Form submitted successfully!');
                         successMessage.style.display = 'block';
+                        aMessage.style.display = 'none';
                     })
                     .catch(error => {
                         console.error('Form submission error:', error);
